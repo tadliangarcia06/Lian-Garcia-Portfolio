@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lian V. Garcia — Civil Engineer, Quantity Surveyor, Construction Estimator and Construction Virtual Assistant." />
+  <title>Lian V. Garcia | Quantity Surveyor & Construction Estimator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --black:#06110d;
+      --black-2:#091812;
+      --black-3:#0d2118;
+      --green:#76f28e;
+      --green-2:#38b85c;
+      --green-d:#145d33;
+      --white:#f7f8f6;
+      --muted:#aebbb4;
+      --paper:#f3f2ed;
+      --line:rgba(118,242,142,.18);
+      --max:1380px;
+      --radius:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;background:var(--black);color:var(--white);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(92%,var(--max));margin:auto}
+    .serifish{font-family:"Manrope",sans-serif}
+    header{position:sticky;top:0;z-index:60;background:rgba(6,17,13,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{font-family:"Manrope",sans-serif;font-weight:800;letter-spacing:.16em;font-size:18px;white-space:nowrap}
+    .navlinks{display:flex;align-items:center;gap:34px;font-size:14px}
+    .navlinks a{color:#eef5f0;position:relative;padding:28px 0 24px}
+    .navlinks a:hover,.navlinks a.active{color:var(--green)}
+    .navlinks a.active:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--green)}
+    .resume-btn{border:1px solid var(--green);padding:11px 18px;border-radius:6px;color:var(--green);font-weight:700;font-size:14px;white-space:nowrap}
+    .resume-btn:hover{background:var(--green);color:#07110d}
+    .menu{display:none;background:none;border:0;color:white;font-size:26px}
+    section{position:relative;overflow:hidden}
+    .section-kicker{color:var(--green);text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:800;display:flex;align-items:center;gap:14px}
+    .section-kicker:after{content:"";height:1px;width:46px;background:var(--green)}
+    h1,h2,h3{font-family:"Manrope",sans-serif;letter-spacing:-.045em;line-height:1.08}
+    .btn{display:inline-flex;gap:12px;align-items:center;justify-content:center;padding:14px 24px;border-radius:6px;border:1px solid var(--green);font-weight:700;font-size:15px;transition:.2s ease}
+    .btn.primary{background:var(--green);color:#07110d}
+    .btn.ghost{color:var(--green);background:transparent}
+    .btn:hover{transform:translateY(-2px)}
+
+    /* HOME */
+    .hero{min-height:690px;background:
+      linear-gradient(90deg,rgba(4,17,12,.98) 0%,rgba(4,17,12,.92) 36%,rgba(4,17,12,.48) 67%,rgba(4,17,12,.15) 100%),
+      radial-gradient(circle at 80% 24%,rgba(118,242,142,.10),transparent 35%),
+      linear-gradient(135deg,#0a1f17,#24352d 58%,#526159);}
+    .hero:before{content:"";position:absolute;inset:0;opacity:.28;background-image:
+      linear-gradient(90deg,transparent 0 10%,rgba(118,242,142,.07) 10.2% 10.35%,transparent 10.5% 100%),
+      linear-gradient(0deg,transparent 0 17%,rgba(255,255,255,.05) 17.2% 17.35%,transparent 17.5% 100%);background-size:210px 180px,240px 180px;transform:skewX(-8deg) scale(1.15)}
+    .hero:after{content:"";position:absolute;right:-7%;top:6%;width:58%;height:88%;opacity:.14;background:
+      linear-gradient(90deg,transparent 0 20%,#d7dfdb 20.3% 20.6%,transparent 21% 44%,#d7dfdb 44.2% 44.6%,transparent 45% 68%,#d7dfdb 68.2% 68.6%,transparent 69%),
+      linear-gradient(0deg,transparent 0 18%,#d7dfdb 18.2% 18.5%,transparent 19% 42%,#d7dfdb 42.2% 42.5%,transparent 43% 66%,#d7dfdb 66.2% 66.5%,transparent 67%);clip-path:polygon(10% 18%,70% 0,100% 11%,100% 100%,0 100%);border:2px solid rgba(255,255,255,.16)}
+    .hero-inner{position:relative;z-index:2;min-height:690px;display:grid;grid-template-columns:1.08fr .92fr;align-items:end}
+    .hero-copy{padding:92px 20px 74px 0;align-self:center}
+    .hero-copy .civil{color:var(--green);text-transform:uppercase;letter-spacing:.24em;font-weight:800;font-size:14px;margin-bottom:12px}
+    .hero-copy h1{font-size:clamp(54px,6vw,88px);font-weight:800;margin-bottom:16px}
+    .hero-copy .subheadline{font-size:clamp(19px,2vw,27px);color:#f4f5f2;margin-bottom:36px}
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));max-width:720px;margin:8px 0 34px}
+    .stat{padding:0 22px;border-right:1px solid rgba(255,255,255,.22)}
+    .stat:first-child{padding-left:0}
+    .stat:last-child{border-right:0}
+    .stat .icon{color:var(--green);font-size:28px;margin-bottom:7px}
+    .stat strong{display:block;font-size:21px;font-family:"Manrope",sans-serif}
+    .stat span{display:block;font-size:12px;color:#d0d9d4;margin-top:3px}
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+    .hero-portrait{position:relative;z-index:3;display:flex;align-items:flex-end;justify-content:center;height:100%}
+    .hero-portrait img{height:610px;width:auto;object-fit:contain;filter:drop-shadow(0 22px 40px rgba(0,0,0,.38))}
+    .hero-portrait:before{content:"";position:absolute;bottom:0;left:3%;right:-4%;height:88%;background:linear-gradient(135deg,transparent 0 36%,rgba(118,242,142,.13) 36.2% 37%,transparent 37.2% 73%,rgba(118,242,142,.11) 73.2% 74%,transparent 74.2%);z-index:-1}
+
+    /* ABOUT */
+    .about{background:#f6f6f2;color:#14231d;padding:94px 0}
+    .about .section-kicker{color:#1e7c42}
+    .about .section-kicker:after{background:#1e7c42}
+    .about-title{font-size:clamp(40px,5vw,65px);max-width:760px;margin:12px 0 40px}
+    .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:start}
+    .about-copy p{font-size:18px;color:#4a5751;margin-bottom:18px;max-width:760px}
+    .about-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .about-card{background:#efefeb;border:1px solid #d8dcd8;border-radius:18px;padding:24px;min-height:132px}
+    .about-card b{display:block;color:#08110d;font-size:16px;margin-bottom:8px}
+    .about-card span{color:#64706b;font-size:14px}
+    .about-card b i{font-style:normal;margin-right:8px}
+
+    /* SERVICES */
+    .services{background:linear-gradient(180deg,#07140f,#06110d);padding:86px 0 92px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .services-grid-wrap{display:grid;grid-template-columns:.78fr 1.52fr;gap:62px;align-items:start}
+    .services-copy h2{font-size:clamp(38px,4.4vw,62px);margin:12px 0 22px}
+    .services-copy p{color:#c3cec8;max-width:500px;font-size:17px;margin-bottom:26px}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+    .service{padding:8px 24px 22px;text-align:center;border-left:1px solid rgba(255,255,255,.12);min-height:155px}
+    .service:nth-child(5),.service:nth-child(6),.service:nth-child(7),.service:nth-child(8){padding-top:26px}
+    .service-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;background:rgba(118,242,142,.08);color:var(--green);font-size:27px}
+    .service b{display:block;font-size:15px;margin-bottom:5px}
+    .service span{display:block;color:#acb8b2;font-size:12px;line-height:1.4}
+
+    /* PROJECTS */
+    .projects{padding:88px 0;background:radial-gradient(circle at 83% 35%,rgba(49,139,73,.13),transparent 26%),linear-gradient(180deg,#081712,#06110d)}
+    .projects:before{content:"";position:absolute;right:0;top:0;width:43%;height:100%;opacity:.08;background:repeating-linear-gradient(90deg,transparent 0 95px,white 96px 97px),repeating-linear-gradient(0deg,transparent 0 75px,white 76px 77px);transform:skewY(-8deg)}
+    .project-head{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:38px}
+    .project-head h2{font-size:clamp(40px,5vw,64px);margin:12px 0 12px}
+    .project-head p{color:#c2cdc7;font-size:18px;max-width:820px}
+    .project-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .project{background:linear-gradient(180deg,#0d2a20,#0a2119);border:1px solid rgba(118,242,142,.16);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;height:100%}
+    .project-visual{height:240px;position:relative;overflow:hidden;background:linear-gradient(135deg,#365044,#17251f)}
+    .project-visual img{width:100%;height:100%;object-fit:cover;display:block}
+    .project-visual:before{content:"";position:absolute;inset:0;background:
+      linear-gradient(115deg,transparent 0 28%,rgba(255,255,255,.14) 28.4% 29%,transparent 29.4% 70%,rgba(255,255,255,.1) 70.4% 71%,transparent 71.4%),
+      linear-gradient(0deg,rgba(5,12,9,.15),rgba(5,12,9,.15));}
+    .project-visual.restaurant{background:linear-gradient(150deg,#3c2f18 0%,#8b6832 45%,#243424 46%,#102118 100%)}
+    .project-visual.showroom{background:linear-gradient(145deg,#8f8c80 0%,#ded7c5 42%,#5b605d 43%,#171e1b 100%)}
+    .project-visual.tower{background:linear-gradient(160deg,#87a9bc 0%,#c8d9de 45%,#536b73 46%,#18272a 100%)}
+    .project-visual .sketch{position:absolute;left:8%;right:8%;bottom:10%;height:72%;border:2px solid rgba(255,255,255,.28);clip-path:polygon(0 28%,8% 28%,8% 12%,18% 12%,18% 20%,33% 20%,33% 5%,47% 5%,47% 22%,60% 22%,60% 15%,73% 15%,73% 30%,88% 30%,88% 0,100% 0,100% 100%,0 100%)}
+    .project-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;align-items:flex-start}
+    .project-type{color:var(--green);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;margin-bottom:8px}
+    .project h3{font-size:24px;margin-bottom:9px}
+    .project p{color:#c2cdc7;font-size:14px;min-height:70px}
+    .work-link{display:inline-flex;gap:12px;align-items:center;margin-top:auto;padding-top:9px;padding-bottom:9px;padding-left:18px;padding-right:18px;border:1px solid var(--green);color:var(--green);border-radius:4px;font-weight:700;font-size:13px;align-self:flex-start}
+    .project-footer{position:relative;z-index:2;margin-top:38px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;display:flex;align-items:center;justify-content:space-between;gap:28px;color:#eef3ef}
+    .project-footer em{font-size:18px;color:#e8eee9}
+    .project-footer a{color:var(--green);font-weight:700}
+
+    /* KEEP REST OF DRAFT, RETHEMED */
+    .workflow,.skills,.experience,.contact{padding:92px 0}
+    .workflow{background:#f3f2ed;color:#14231d}
+    .workflow h2,.skills h2,.experience h2,.contact h2{font-size:clamp(38px,4.5vw,60px);margin:12px 0 34px}
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+    .step{padding:25px 20px;border-top:2px solid #1f7c43;position:relative}
+    .step:not(:last-child):after{content:"→";position:absolute;right:-8px;top:15px;color:#1f7c43;font-weight:800}
+    .step b{display:block;font-family:"Manrope";font-size:15px;margin-bottom:7px}.step span{font-size:12px;color:#66726d}
+    .skills{background:#07140f}.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.skillbox{background:#0b2018;border:1px solid var(--line);padding:28px;border-radius:var(--radius)}.skillbox h3{font-size:22px;margin-bottom:18px}.chips{display:flex;flex-wrap:wrap;gap:9px}.chip{padding:8px 11px;border:1px solid rgba(118,242,142,.18);border-radius:9px;font-size:13px;background:#0f2a20;color:#d9e5de}
+    .experience{background:#f6f6f2;color:#14231d}.timeline{border-left:2px solid #d0d6d1;padding-left:30px}.job{position:relative;padding-bottom:42px}.job:before{content:"";position:absolute;left:-37px;top:4px;width:11px;height:11px;border-radius:50%;background:#1f7c43}.job-meta{font-size:12px;color:#1f7c43;font-weight:800;text-transform:uppercase;letter-spacing:.07em}.job h3{font-size:27px;margin:7px 0 2px}.job h4{font-size:15px;color:#6b7771;margin-bottom:12px}.job ul{padding-left:18px;color:#52605a;font-size:14px}.resume-banner{background:#0b241a;color:white;border-radius:20px;padding:38px;display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:18px}.resume-banner p{color:#d0dbd5}.resume-banner .btn{background:var(--green);color:#07110d}
+    .contact{background:#07140f}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start}.contact p{color:#becbc4;max-width:650px;margin-bottom:24px}.contact-card{background:#0b2018;border:1px solid var(--line);border-radius:var(--radius);padding:28px}.contact-item{padding:15px 0;border-bottom:1px solid var(--line)}.contact-item:last-child{border:0}.contact-item small{display:block;color:#8ea098;font-size:11px;text-transform:uppercase;font-weight:800;letter-spacing:.1em}.contact-item a{color:var(--green);font-weight:700}
+    footer{padding:28px 0;background:#03100b;color:#a9b7af;font-size:12px;border-top:1px solid var(--line)}.footer-flex{display:flex;justify-content:space-between;gap:20px}
+
+    @media(max-width:1050px){
+      .navlinks{gap:18px}.hero-inner{grid-template-columns:1fr .78fr}.hero-copy h1{font-size:62px}.stats{grid-template-columns:repeat(2,1fr);gap:18px}.stat{border:0;padding:0}.services-grid-wrap{grid-template-columns:1fr}.service-grid{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:1fr 1fr}.project-grid .project:last-child{grid-column:1/-1}.about-grid{grid-template-columns:1fr}.hero-portrait img{height:530px}
+    }
+    @media(max-width:780px){
+      .navlinks,.resume-btn{display:none}.menu{display:block}.hero-inner{grid-template-columns:1fr}.hero{min-height:auto}.hero-copy{padding:72px 0 20px}.hero-portrait{height:430px}.hero-portrait img{height:430px}.about-cards,.service-grid,.project-grid,.skills-grid,.contact-grid{grid-template-columns:1fr}.project-grid .project:last-child{grid-column:auto}.project-head,.project-footer,.resume-banner{display:block}.project-head .btn,.project-footer a,.resume-banner .btn{margin-top:20px}.steps{grid-template-columns:1fr}.step:not(:last-child):after{content:"↓";right:auto;left:20px;top:auto;bottom:-12px}.service{border-left:0;border-top:1px solid rgba(255,255,255,.1);padding:22px}.services-grid-wrap{gap:34px}
+    }
+    @media(max-width:520px){.hero-copy h1{font-size:47px}.hero-copy .subheadline{font-size:17px}.stats{grid-template-columns:1fr 1fr}.hero-portrait{height:350px}.hero-portrait img{height:350px}.about-title{font-size:38px}.project-visual{height:190px}.footer-flex{display:block}.footer-flex span{display:block;margin-top:8px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#home">LIAN V. GARCIA</a>
+      <div class="navlinks">
+        <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+      </div>
+      <a class="resume-btn" href="LIAN-GARCIA-CV.pdf" download>Download Resume ↓</a>
+      <button class="menu" aria-label="Open menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="civil">Civil Engineer</div>
+      <h1>LIAN V. GARCIA</h1>
+      <p class="subheadline">Quantity Surveyor | Estimator | Construction Virtual Assistant</p>
+      <div class="stats">
+        <div class="stat"><div class="icon">▣</div><strong>2+</strong><span>Years Experience</span></div>
+        <div class="stat"><div class="icon">▭</div><strong>20+</strong><span>Projects / Year</span></div>
+        <div class="stat"><div class="icon">▥</div><strong>₱10M – ₱30M</strong><span>Project Values</span></div>
+        <div class="stat"><div class="icon">㎡</div><strong>50 – 1,500 sqm</strong><span>Project Sizes</span></div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">View My Work →</a>
+        <a class="btn ghost" href="LIAN-GARCIA-CV.pdf" download>Download Resume ↓</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <img src="lian-garcia-cutout.png" alt="Lian V. Garcia professional portrait" />
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="section-kicker">About Me</div>
+    <h2 class="about-title">From construction site to remote estimating support.</h2>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>I am a Civil Engineer with over two years of combined experience in site and office engineering, specializing in fit-out projects covering Architectural, Structural, and MEPFS works.</p>
+        <p>My experience includes quantity takeoffs, BOQ preparation, cost estimation, procurement coordination, QA/QC inspections, project coordination, and construction documentation.</p>
+        <p>I bring both office-based estimating knowledge and practical site experience, allowing me to understand how quantities, materials, drawings, schedules, and construction execution connect.</p>
+      </div>
+      <div class="about-cards">
+        <div class="about-card"><b><i>📐</i>Technical</b><span>Architectural, Structural & MEPFS drawing interpretation.</span></div>
+        <div class="about-card"><b><i>💰</i>Commercial</b><span>Takeoffs, BOQs, quotations, cost analysis and vendor comparison.</span></div>
+        <div class="about-card"><b><i>🏗️</i>Site Experience</b><span>Project-in-charge, supervision, QA/QC and inspection experience.</span></div>
+        <div class="about-card"><b><i>💻</i>Remote Ready</b><span>Digital documentation, spreadsheets and construction software.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="wrap services-grid-wrap">
+    <div class="services-copy">
+      <div class="section-kicker">What I Do</div>
+      <h2>Comprehensive Construction Support for Your Projects</h2>
+      <p>I help contractors, builders, and construction teams with accurate quantity takeoffs, BOQs, cost estimates, and project documentation — remotely.</p>
+      <a class="btn ghost" href="#contact">Learn More →</a>
+    </div>
+    <div class="service-grid">
+      <div class="service"><div class="service-icon">◩</div><b>Quantity Takeoff</b><span>Accurate and detailed material takeoffs</span></div>
+      <div class="service"><div class="service-icon">◎</div><b>Cost Estimation</b><span>Material, labor, and equipment costing</span></div>
+      <div class="service"><div class="service-icon">▤</div><b>BOQ Preparation</b><span>Organized and comprehensive BOQs</span></div>
+      <div class="service"><div class="service-icon">🤝</div><b>Procurement Support</b><span>Supplier sourcing and comparison</span></div>
+      <div class="service"><div class="service-icon">↗</div><b>Cost Analysis</b><span>Budgeting and value engineering</span></div>
+      <div class="service"><div class="service-icon">▧</div><b>Construction Documentation</b><span>Reports, RFQs, WIRs, and project documents</span></div>
+      <div class="service"><div class="service-icon">▦</div><b>Project Administration</b><span>Schedules, tracking and coordination</span></div>
+      <div class="service"><div class="service-icon">▱</div><b>Remote Construction VA Support</b><span>Reliable and organized virtual support</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <div class="wrap">
+    <div class="project-head">
+      <div>
+        <div class="section-kicker">Featured Projects</div>
+        <h2>Construction Experiences</h2>
+        <p>A collection of fit-out, residential, and commercial projects I've worked on, showcasing my experience as a Project In-charge and QAQC Engineer.</p>
+      </div>
+      <a class="btn ghost" href="projects.html">View All Projects →</a>
+    </div>
+
+    <div class="project-grid">
+      <article class="project">
+        <div class="project-visual restaurant"><img src="project-1-featured.png" alt="Project 1 featured perspective"></div>
+        <div class="project-body">
+          <div class="project-type">Restaurant Fit-Out</div><h3>Project 1</h3>
+          <p>A restaurant fit-out involving Architectural and MEFPS works. I was responsible for site management, quantity and material takeoffs, and cost estimation, supporting the project from planning through execution.</p>
+          <a class="work-link" href="project-1.html">View My Work →</a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-visual showroom"><img src="project-2-featured.png" alt="Project 2 featured image"></div>
+        <div class="project-body">
+          <div class="project-type">Commercial Fit-Out</div><h3>Project 2</h3>
+          <p>A combined office and showroom fit-out where I supported the project from planning through completion, coordinating site activities and helping ensure smooth execution and progress.</p>
+          <a class="work-link" href="project-2.html">View My Work →</a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project-visual tower"><img src="project-6-featured.jpg" alt="Project 6 featured image"></div>
+        <div class="project-body">
+          <div class="project-type">High-Rise Construction</div><h3>Project 6</h3>
+          <p>A high-rise corporate construction project where I worked as a QA/QC Plumbing Engineer, supporting plumbing inspections and testing, WIR/WAP documentation, inspection scheduling, and QA/QC coordination.</p>
+          <a class="work-link" href="project-6.html">View My Work →</a>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<section class="workflow">
+  <div class="wrap">
+    <div class="section-kicker">My Process</div>
+    <h2>A structured estimating workflow.</h2>
+    <div class="steps">
+      <div class="step"><b>01 — Drawings</b><span>Receive and organize project documents.</span></div>
+      <div class="step"><b>02 — Review</b><span>Understand scope, trades and specifications.</span></div>
+      <div class="step"><b>03 — Takeoff</b><span>Measure and organize quantities.</span></div>
+      <div class="step"><b>04 — Estimate</b><span>Apply rates and review quotations.</span></div>
+      <div class="step"><b>05 — Check & Submit</b><span>Quality-check deliverables before submission.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills">
+  <div class="wrap">
+    <div class="section-kicker">Skills &amp; Tools</div>
+    <h2>The technical toolkit behind the work.</h2>
+    <div class="skills-grid">
+      <div class="skillbox"><h3>Quantity Surveying &amp; Estimating</h3><div class="chips"><span class="chip">Quantity Takeoff</span><span class="chip">BOQ Preparation</span><span class="chip">Cost Estimation</span><span class="chip">Cost Analysis</span><span class="chip">RFQs</span><span class="chip">Vendor Comparison</span><span class="chip">Procurement Support</span><span class="chip">Material Takeoff</span></div></div>
+      <div class="skillbox"><h3>Construction &amp; Project Management</h3><div class="chips"><span class="chip">Project Coordination</span><span class="chip">Site Supervision</span><span class="chip">Project Scheduling</span><span class="chip">QA/QC</span><span class="chip">Construction Documentation</span><span class="chip">Drawing Interpretation</span><span class="chip">Material Allocation</span></div></div>
+      <div class="skillbox"><h3>Estimating &amp; Construction Software</h3><div class="chips"><span class="chip">PlanSwift</span><span class="chip">Bluebeam Revu</span><span class="chip">Primavera P6</span><span class="chip">AutoCAD</span><span class="chip">SketchUp</span><span class="chip">Procore</span></div></div>
+      <div class="skillbox"><h3>Productivity</h3><div class="chips"><span class="chip">Microsoft Office</span><span class="chip">Google Workspace</span><span class="chip">Canva</span><span class="chip">Digital Documentation</span><span class="chip">Remote Collaboration</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="experience">
+  <div class="wrap">
+    <div class="section-kicker">Experience</div>
+    <h2>Experience that combines office estimating and field execution.</h2>
+    <div class="timeline">
+      <article class="job"><div class="job-meta">April 2024 — Present · Sunly Properties Inc.</div><h3>Technical Assistant / Project-In-Charge</h3><h4>Fit-Out &amp; Retail Construction</h4><ul><li>Reviewed and quantified 2–3 fit-out and retail projects simultaneously, ranging from 50–1,500 sqm and ₱10M–₱30M in value.</li><li>Quantified 20+ projects annually and contributed to more than 20 project awards within two years.</li><li>Prepared BOQs and scopes of work with reported 80–90% quantity takeoff accuracy.</li><li>Supported cost estimation through quotation review and cost analysis, with reported 90%+ estimate accuracy.</li><li>Sourced and evaluated 2–3 supplier options per project for cost comparison and procurement decisions.</li><li>Managed fit-out projects of 50–200 sqm and supervised teams of 10–20 workers.</li></ul></article>
+      <article class="job"><div class="job-meta">July 2023 — March 2024 · Agchem Construction &amp; Development Corporation</div><h3>QA/QC Plumbing Engineer</h3><h4>High-Rise Construction</h4><ul><li>Conducted installation inspection and testing of plumbing systems for a 43-storey premium corporate tower.</li><li>Performed daily plumbing testing for 30+ pipes and coordinated inspection schedules and final testing.</li><li>Accelerated inspection and testing works for 15+ floors within six months.</li><li>Prepared and submitted WAPs, WIRs, and inspection/testing reports.</li></ul></article>
+    </div>
+    <div class="resume-banner"><div><h3>Want the complete picture?</h3><p>Download my resume for my full professional background.</p></div><a class="btn" href="LIAN-GARCIA-CV.pdf" download>Download Resume</a></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div><div class="section-kicker">Contact</div><h2>Let's work together.</h2><p>Looking for a reliable remote Quantity Surveyor, Estimator, or Construction Virtual Assistant? I would be happy to support your construction team.</p><a class="btn primary" href="mailto:tadliangarcia@gmail.com">Email Me</a></div>
+    <div class="contact-card"><div class="contact-item"><small>Email</small><a href="mailto:tadliangarcia@gmail.com">tadliangarcia@gmail.com</a></div><div class="contact-item"><small>LinkedIn</small><a href="https://linkedin.com/in/lgarcia06" target="_blank" rel="noopener">linkedin.com/in/lgarcia06</a></div><div class="contact-item"><small>Based in</small><span>Paranaque City, Metro Manila, Philippines</span></div><div class="contact-item"><small>Open to</small><span>Remote QS • Estimator • Construction VA</span></div></div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap footer-flex"><span>© 2026 Lian V. Garcia</span><span>Civil Engineer · Quantity Surveyor · Construction Estimator</span></div></footer>
+</body>
+</html>
